@@ -8,10 +8,10 @@ rundeck: Rundeck
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.rundeck](https://galaxy.ansible.com/devops-toolbox.rundeck)
+[https://galaxy.ansible.com/devopstoolbox.rundeck](https://galaxy.ansible.com/devopstoolbox.rundeck)
 
 ```bash
-ansible-galaxy install devops-toolbox.rundeck
+ansible-galaxy install devopstoolbox.rundeck
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: rundeck is configured
       import_role:
-        name: devops-toolbox.rundeck
+        name: devopstoolbox.rundeck
       vars:
         rundeck_packages_state: present
         rundeck_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
