@@ -1,0 +1,11 @@
+---
+# Configure rundeck
+
+- name: service is enabled and started
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  become: true
+  loop: "{{ rundeck_services_enable }}"
+  when: rundeck_enable_service

@@ -1,0 +1,27 @@
+---
+# Install rundeck packages
+
+- name: unwanted packages are removed
+  package:
+    name: "{{ rundeck_packages_remove }}"
+    state: absent
+  become: true
+  when: rundeck_remove_packages
+
+- name: prereq repositories are installed
+  package:
+    name: "{{ rundeck_packages_repos }}"
+    state: "{{ rundeck_packages_state }}"
+  become: true
+
+- name: prereq packages are installed
+  package:
+    name: "{{ rundeck_packages_prereq }}"
+    state: "{{ rundeck_packages_state }}"
+  become: true
+
+- name: packages are installed
+  package:
+    name: "{{ rundeck_packages_install }}"
+    state: "{{ rundeck_packages_state }}"
+  become: true

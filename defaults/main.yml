@@ -1,0 +1,19 @@
+---
+# defaults file for rundeck
+
+rundeck_packages_state: present
+rundeck_remove_packages: true
+rundeck_enable_service: true
+rundeck_enable_selinux: true
+rundeck_copy_templates: true
+rundeck_firewall_configure: true
+rundeck_firewall_rules:
+  - service: ssh
+  - port: 3389
+rundeck_users:
+  - user: devops
+    group: docker
+rundeck_selinux_booleans:
+  - name: ftp_home_dir
+    state: true
+    persistent: true
